@@ -50,3 +50,14 @@ CREATE TABLE invoice_items (
     FOREIGN KEY (treatment_id)
       REFERENCES treatments(id)
 );
+
+CREATE TABLE join_treatments (
+  medical_history_id INT,
+  treatment_id INT,
+  CONSTRAINT medical_history_key
+    FOREIGN KEY (medical_history_id)
+      REFERENCES medical_histories(id),
+  CONSTRAINT treatment_key
+    FOREIGN KEY (treatment_id)
+      REFERENCES treatments(id)  
+);
